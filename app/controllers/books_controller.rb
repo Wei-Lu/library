@@ -1,5 +1,7 @@
-class BooksController < ApplicationController
+class BooksController < UsersController
 	 before_filter :find_book, only: [:show, :edit, :update, :destroy]
+   before_filter :find_user
+
  
   def index
   	@books = Book.all
@@ -15,9 +17,9 @@ class BooksController < ApplicationController
 
   def create
    @book = Book.new(params[:book])
-
+   @book.user = @user
    if @book.save
-     redirect_to @book,notice: "Book created successfully!"
+     redirect_to @user,notice: "Book created successfully!"
    else
     render :new
    end 	

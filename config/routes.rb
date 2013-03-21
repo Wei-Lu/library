@@ -1,8 +1,9 @@
 Library::Application.routes.draw do
 #  get "books/index"
-  resources :books
   resources :users
-
+  resources :users, only:[:show] do
+    resource :books
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

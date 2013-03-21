@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @book = Book.new
   	# render :text => "in show"
   end
   
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   private
 
 	def find_user
-	  @user = User.find(params[:id])
+ 	  @user = User.find(params[:user_id] || params[:id])
 	end
 
 end

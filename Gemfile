@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'thin' 
-gem 'rspec-rails', :group => [:test, :development] 
+gem 'rspec-rails'
 gem 'mysql2'
 
 
